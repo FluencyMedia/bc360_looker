@@ -8,7 +8,7 @@ datagroup: dg_bc360_bq {
   sql_trigger:  SELECT
                   MAX(trg.last_updated)
                 FROM (
-                  SELECT last_updated from bc_arch_main.arch_clients
+                  SELECT ac.last_updated from bc_arch_main.arch_clients ac
                   UNION ALL
                   SELECT last_updated from bc_arch_main.arch_outcomes
                   UNION ALL
