@@ -11,8 +11,6 @@ view: arch_clients {
             ac.organization,
             ac.org_short
           FROM bc_arch_main.arch_clients ac;;
-
-    # indexes: ["client_id", "organization_id", "client", "organization", "org_short"]
   }
 
 ##########  METADATA  ##########

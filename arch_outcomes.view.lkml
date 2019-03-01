@@ -1,5 +1,12 @@
 view: arch_outcomes {
-  sql_table_name: bc_arch_main.arch_outcomes ;;
+
+  derived_table: {
+    datagroup_trigger: dg_bc360_bq
+
+    sql:  SELECT
+            *
+          FROM bc_arch_main.arch_outcomes ao;;
+  }
 
 ##########  METADATA  ##########
 
