@@ -5,7 +5,6 @@ view: arch_program {
 
     sql:  SELECT
             organization_id,
-            account_id,
             campaign_id,
             adgroup_id,
 
@@ -43,19 +42,6 @@ view: arch_program {
     sql: ${TABLE}.organization_id ;;
   }
 
-  dimension: account_id {
-    view_label: "Z - Metadata"
-    group_label: "Database IDs"
-    label: "Channel Account ID"
-    description: "ID For Respective 'Channel' Account (Adwords, Display, etc.)"
-
-    hidden: no
-
-    type: string
-
-    sql: ${TABLE}.account_id ;;
-  }
-
   dimension: campaign_id {
     view_label: "Z - Metadata"
     group_label: "Database IDs"
@@ -82,15 +68,6 @@ view: arch_program {
     sql: ${TABLE}.adgroup_id ;;
   }
 
-  measure: num_accounts {
-    view_label: "Z - Metadata"
-    group_label: "Category Counts"
-    label: "# Accounts"
-    description: "Number of Digital Channel Accounts"
-    type: count_distinct
-
-    sql: ${account_id} ;;
-  }
 
   #<<<<<<<<<  METADATA  }  <<<<<<<<<#
 
