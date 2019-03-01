@@ -4,7 +4,14 @@ view: arch_outcomes {
     datagroup_trigger: dg_bc360_bq
 
     sql:  SELECT
-            *
+            outcome_tracker_id,
+            outcome_intent,
+            outcome_mechanism,
+            outcome_quality,
+            outcome_score,
+            outcome_type,
+            outcome_type_category,
+            outcome_type_name
           FROM bc_arch_main.arch_outcomes ao;;
   }
 

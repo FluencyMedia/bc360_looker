@@ -22,3 +22,11 @@ persist_with: dg_bc360_bq
 explore: arch_clients {
   label: "Clients"
 }
+
+explore: arch_outcomes {
+  label: "Outcomes"
+}
+
+explore: arch_program {
+  label: "Programs"
+}
