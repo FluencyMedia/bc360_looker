@@ -1,6 +1,19 @@
 view: arch_clients {
   view_label: "Client Architecture"
-  sql_table_name: bc_arch_main.arch_clients ;;
+
+  derived_table: {
+    datagroup_trigger: dg_bc360_bq
+
+    sql:  SELECT
+            ac.client_id,
+            ac.organization_id,
+            ac.client,
+            ac.organization,
+            ac.org_short
+          FROM bc_arch_main.arch_clients ac;;
+
+    # indexes: ["client_id", "organization_id", "client", "organization", "org_short"]
+  }
 
 ##########  METADATA  ##########
 
