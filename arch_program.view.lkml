@@ -1,5 +1,32 @@
 view: arch_program {
-  sql_table_name: bc_arch_main.arch_program ;;
+
+  derived_table: {
+    datagroup_trigger: dg_bc360_bq
+
+    sql:  SELECT
+            organization_id,
+            account_id,
+            campaign_id,
+            adgroup_id,
+
+            medium,
+            account,
+            agency,
+            campaign,
+            campaign_group,
+            campaign_region,
+            campaign_location,
+            campaign_tier_base,
+            adgroup,
+
+            program,
+            service_line,
+            service_line_code,
+            service_offering,
+            service_detail
+
+          FROM bc_arch_main.arch_program ap;;
+  }
 
 #>>>>>>>>>  METADATA  {
 
