@@ -8,11 +8,11 @@ datagroup: dg_bc360_bq {
   sql_trigger:  SELECT
                   MAX(trg.last_updated)
                 FROM (
-                  SELECT ac.last_updated from bc_arch_main.arch_clients ac
+                  SELECT last_updated from bc_arch_main.arch_clients
                   UNION ALL
-                  SELECT ao.last_updated from bc_arch_main.arch_outcomes ao
+                  SELECT last_updated from bc_arch_main.arch_outcomes
                   UNION ALL
-                  SELECT ap.last_updated from bc_arch_main.arch_program ap
+                  SELECT last_updated from bc_arch_main.arch_program
                 ) trg ;;
   max_cache_age: "24 hours"
 }
