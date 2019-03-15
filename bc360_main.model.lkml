@@ -30,3 +30,7 @@ explore: arch_outcomes {
 explore: arch_program {
   label: "Programs"
 }
+
+explore: tl_touchpoint_data {
+  label: "Tea Leaves Reporting"
+}
