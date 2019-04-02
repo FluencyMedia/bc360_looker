@@ -4,24 +4,25 @@ view: arch_program {
     datagroup_trigger: dg_bc360_bq
 
     sql:  SELECT
+            client_id,
+            client,
             organization_id,
-            campaign_id,
-            adgroup_id,
-
-            account,
+            organization,
+            org_short,
             agency,
-            campaign,
+            campaign_id,
+            program,
+            service_line_code,
+            service_line,
+            service_offering,
+            service_detail,
             campaign_group,
             campaign_region,
             campaign_location,
-            campaign_tier_base,
-            adgroup,
-
-            program,
-            service_line,
-            service_line_code,
-            service_offering,
-            service_detail
+            campaign_tier,
+            campaign_matchtype,
+            adgroup_id,
+            last_updated
 
           FROM bc_arch_main.arch_program ap;;
   }
