@@ -8,7 +8,6 @@ view: arch_program {
             campaign_id,
             adgroup_id,
 
-            medium,
             account,
             agency,
             campaign,
