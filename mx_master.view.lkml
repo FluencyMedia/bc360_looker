@@ -1,5 +1,32 @@
 view: mx_master {
-  sql_table_name: bc_bq_data.mx_master ;;
+
+  derived_table: {
+    datagroup_trigger: dg_bc360_bq
+
+    sql:  SELECT
+            medium,
+            client_id,
+            adgroup_id,
+            campaign_id,
+            creative_id,
+            criterion_id,
+            adnetwork_01,
+            adnetwork_02,
+            interaction_types,
+            device,
+            slot,
+            date,
+            impressions,
+            position_avg,
+            cost,
+            clicks,
+            interactions,
+            outcomes_bulk,
+            outcome_value,
+            last_updated
+
+          FROM bc_bq_data.mx_master mxm;;
+  }
 
   dimension: adgroup_id {
     type: string
