@@ -13,6 +13,8 @@ datagroup: dg_bc360_bq {
                   SELECT last_updated from bc_arch_main.arch_outcomes
                   UNION ALL
                   SELECT last_updated from bc_arch_main.arch_program
+                  UNION ALL
+                  SELECT last_updated from bc_bq_data.mx_master
                 ) trg ;;
   max_cache_age: "24 hours"
 }
