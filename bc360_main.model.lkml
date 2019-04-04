@@ -21,16 +21,18 @@ datagroup: dg_bc360_bq {
 
 persist_with: dg_bc360_bq
 
-explore: arch_clients {
-  label: "Clients"
-}
-
 explore: arch_outcomes {
   label: "Outcomes"
 }
 
 explore: arch_program {
-  label: "Programs"
+  label: "BC360 - Master"
+
+  join: mx_master {
+    relationship: one_to_many
+    type: left_outer
+    sql_on: ${arch_program.adgroup_id} = ${mx_master.adgroup_id} ;;
+  }
 }
 
 explore: tl_touchpoint_data {

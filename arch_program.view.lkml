@@ -11,6 +11,7 @@ view: arch_program {
             org_short,
             agency,
             campaign_id,
+            campaign,
             program,
             service_line_code,
             service_line,
@@ -176,7 +177,7 @@ view: arch_program {
     sql: ${TABLE}.medium ;;
   }
 
-  dimension: account {
+  dimension: client {
     view_label: "1. Client/Account"
     label: "Channel Account"
     description: "ID For Respective 'Channel' Account (Adwords, Display, etc.)"
@@ -184,7 +185,7 @@ view: arch_program {
     drill_fields: []
 
     type: string
-    sql: ${TABLE}.account ;;
+    sql: ${TABLE}.client ;;
   }
 
   dimension: campaign {
