@@ -22,8 +22,7 @@ view: mx_marketing_bh_day {
             cost,
             clicks,
             outcomes,
-            outcomes_bulk,
-            last_updated
+            outcomes_bulk
           FROM bc360_mx_marketing.mx_marketing_master mxm
           WHERE mxm.client_id = 'CLIENT-00001';;
 
