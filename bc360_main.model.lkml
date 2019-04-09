@@ -62,6 +62,30 @@ explore: bc360_marketing_core {
   }
 }
 
+explore: bc360_marketing_bh_day {
+  from: arch_clients
+  label: "BH - Master [Daily]"
+
+  join: arch_program {
+    relationship: one_to_many
+    type: left_outer
+    sql_on: ${bc360_marketing_bh_day.organization_id} = ${arch_program.organization_id} ;;
+  }
+
+  join: mx_marketing_bh_day {
+    relationship: one_to_many
+    type: left_outer
+    sql_on: ${arch_program.adgroup_id} = ${mx_marketing_bh_day.adgroup_id} ;;
+  }
+
+  join: arch_outcomes {
+    relationship: many_to_many
+    type: left_outer
+    sql_on: ${mx_marketing_bh_day.outcome_tracker_id} = ${arch_outcomes.outcome_tracker_id} ;;
+  }
+
+}
+
 explore: tl_touchpoint_data {
   label: "Tea Leaves Reporting"
 }
