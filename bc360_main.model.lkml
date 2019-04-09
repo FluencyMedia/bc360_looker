@@ -15,30 +15,50 @@ datagroup: dg_bc360_bq {
 
 persist_with: dg_bc360_bq
 
-explore: arch_outcomes {
-  label: "Outcomes"
-}
-
-explore: bc360_marketing {
+explore: bc360_marketing_day {
   from: arch_clients
-  label: "BC360 - Master"
+  label: "BC360 - Master [Daily]"
 
   join: arch_program {
     relationship: one_to_many
     type: left_outer
-    sql_on: ${bc360_marketing.organization_id} = ${arch_program.organization_id} ;;
+    sql_on: ${bc360_marketing_day.organization_id} = ${arch_program.organization_id} ;;
   }
 
-  join: mx_marketing_master {
+  join: mx_marketing_day {
     relationship: one_to_many
     type: left_outer
-    sql_on: ${arch_program.adgroup_id} = ${mx_marketing_master.adgroup_id} ;;
+    sql_on: ${arch_program.adgroup_id} = ${mx_marketing_day.adgroup_id} ;;
   }
 
   join: arch_outcomes {
     relationship: many_to_many
     type: left_outer
-    sql_on: ${mx_marketing_master.outcome_tracker_id} = ${arch_outcomes.outcome_tracker_id} ;;
+    sql_on: ${mx_marketing_day.outcome_tracker_id} = ${arch_outcomes.outcome_tracker_id} ;;
+  }
+}
+
+
+explore: bc360_marketing_core {
+  from: arch_clients
+  label: "BC360 - Core [Daily]"
+
+  join: arch_program {
+    relationship: one_to_many
+    type: left_outer
+    sql_on: ${bc360_marketing_core.organization_id} = ${arch_program.organization_id} ;;
+  }
+
+  join: mx_marketing_core {
+    relationship: one_to_many
+    type: left_outer
+    sql_on: ${arch_program.adgroup_id} = ${mx_marketing_core.adgroup_id} ;;
+  }
+
+  join: arch_outcomes {
+    relationship: many_to_many
+    type: left_outer
+    sql_on: ${mx_marketing_core.outcome_tracker_id} = ${arch_outcomes.outcome_tracker_id} ;;
   }
 }
 

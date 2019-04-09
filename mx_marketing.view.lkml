@@ -1,4 +1,5 @@
-view: mx_marketing_master {
+view: mx_marketing {
+  extension: required
 
   derived_table: {
     datagroup_trigger: dg_bc360_bq
@@ -7,6 +8,7 @@ view: mx_marketing_master {
             FORMAT("%s-%s","MXM", GENERATE_UUID()) AS row_id,
             date,
             medium,
+            client_id,
             adgroup_id,
             adgroup_uid,
             outcome_tracker_id,
@@ -21,6 +23,7 @@ view: mx_marketing_master {
             outcomes_bulk,
             last_updated
           FROM bc360_mx_marketing.mx_marketing_master mxm;;
+
   }
 
 ##########  METADATA    {
