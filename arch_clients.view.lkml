@@ -19,7 +19,7 @@ view: arch_clients {
     view_label: "Z - Metadata"
     group_label: "Database IDs"
     label: "Client ID"
-    description: "ID for Primary MP360 Client Account"
+    description: "ID for Primary BC360 Client Account"
 
     hidden: no
 
@@ -54,7 +54,7 @@ view: arch_clients {
   dimension: client {
     view_label: "1. Client/Account"
     label: "Client Account"
-    description: "Primary MP360 Client Account"
+    description: "Primary BC360 Client Account"
 
     drill_fields: [
       drill_client*
@@ -82,7 +82,7 @@ view: arch_clients {
   dimension: organization {
     view_label: "1. Client/Account"
     label: "Client Organization"
-    description: "Internal Organization Within MP360 Client Account"
+    description: "Internal Organization Within BC360 Client Account"
 
     drill_fields: [
       drill_client*,
@@ -107,7 +107,7 @@ view: arch_clients {
     view_label: "1. Client/Account"
     group_label: "Z - Category Counts"
     label: "# Clients"
-    description: "Number of MP360 Client Accounts"
+    description: "Number of BC360 Client Accounts"
     type: count_distinct
     value_format_name: decimal_0
 
@@ -118,7 +118,7 @@ view: arch_clients {
     view_label: "1. Client/Account"
     group_label: "Z - Category Counts"
     label: "# Organizations"
-    description: "Number of MP360 Client Organizations"
+    description: "Number of BC360 Client Organizations"
     type: count_distinct
     value_format_name: decimal_0
 
