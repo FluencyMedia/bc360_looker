@@ -369,7 +369,7 @@ dimension: rel_medium_mode {
     type: sum
     value_format_name: decimal_0
 
-    sql: ${TABLE}.clicks;;
+    sql: NULLIF(${TABLE}.clicks,0);;
 
   }
 
