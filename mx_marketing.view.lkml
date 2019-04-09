@@ -20,8 +20,7 @@ view: mx_marketing {
             cost,
             clicks,
             outcomes,
-            outcomes_bulk,
-            last_updated
+            outcomes_bulk
           FROM bc360_mx_marketing.mx_marketing_master mxm;;
 
   }
