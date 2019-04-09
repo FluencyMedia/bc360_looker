@@ -25,8 +25,14 @@ explore: arch_outcomes {
   label: "Outcomes"
 }
 
-explore: arch_program {
+explore: arch_clients {
   label: "BC360 - Master"
+
+  join: arch_program {
+    relationship: one_to_many
+    type: left_outer
+    sql_on: ${arch_clients.organization_id} = ${arch_program.organization_id} ;;
+  }
 
   join: mx_master {
     relationship: one_to_many
