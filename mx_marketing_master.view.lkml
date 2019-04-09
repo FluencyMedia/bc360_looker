@@ -221,7 +221,7 @@ dimension: subtype_codes_raw {
   type: string
 
   # Quick crappy hack to do this as a LookML dimension
-  # Needs to be processed and cached in source data
+  # TODO: Needs to be processed and cached in source data
   sql: split_part(split_part(split_part(${final_url},'?',2),'subtypelist=',2),'&',1) ;;
 }
 
