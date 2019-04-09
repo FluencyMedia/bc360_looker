@@ -4,28 +4,27 @@ view: arch_program {
     datagroup_trigger: dg_bc360_bq
 
     sql:  SELECT
-            client_id,
-            client,
-            organization_id,
-            organization,
-            org_short,
-            agency,
-            campaign_id,
-            campaign,
             program,
             service_line_code,
             service_line,
             service_offering,
             service_detail,
+            campaign_group_id,
             campaign_group,
             campaign_region,
             campaign_location,
             campaign_tier,
             campaign_matchtype,
+            organization_id,
+            agency,
+            account_id,
+            account,
+            medium,
+            campaign_id,
+            campaign,
             adgroup_id,
-            last_updated
-
-          FROM bc_arch_main.arch_program ap;;
+            adgroup
+          FROM bc360_src_arch_marketing.arch_program ap;;
   }
 
 #>>>>>>>>>  METADATA  {

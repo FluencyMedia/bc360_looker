@@ -10,7 +10,7 @@ view: arch_clients {
             ac.client,
             ac.organization,
             ac.org_short
-          FROM bc_arch_main.arch_clients ac;;
+          FROM bc360_src_arch_clients.arch_clients ac;;
   }
 
 ##########  METADATA  ##########
