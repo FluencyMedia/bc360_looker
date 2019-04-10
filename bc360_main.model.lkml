@@ -109,7 +109,8 @@ explore: bc360_marketing_core_month {
 
 explore: bh_mx_marketing_master_day {
   from: arch_clients
-  label: "BC360 - Master [Daily]"
+  view_label: "Beaumont Health"
+  label: "BH - Master [Daily]"
 
   join: arch_program {
     relationship: one_to_many
@@ -132,7 +133,8 @@ explore: bh_mx_marketing_master_day {
 
 explore: scl_mx_marketing_master_day {
   from: arch_clients
-  label: "BC360 - Master [Daily]"
+  view_label: "SCL Health"
+  label: "SCL - Master [Daily]"
 
   join: arch_program {
     relationship: one_to_many
