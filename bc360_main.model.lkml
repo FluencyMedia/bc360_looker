@@ -1,4 +1,4 @@
-label: "BC360 - Official"
+label: "BC360 - All Clients"
 
 connection: "bc360_bq_data"
 include: "*.view.lkml"                       # include all views in this project
