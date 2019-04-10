@@ -15,21 +15,20 @@ datagroup: dg_bc360_bq {
 
 persist_with: dg_bc360_bq
 
-explore: bh_mx_marketing_master_day {
-  from: arch_clients
+explore: bh_marketing_master_day {
   view_label: "Beaumont Health"
   label: "BH Marketing - Master [Daily]"
 
   join: arch_program {
     relationship: one_to_many
     type: left_outer
-    sql_on: ${bh_mx_marketing_master_day.organization_id} = ${arch_program.organization_id} ;;
+    sql_on: ${arch_program.adgroup_id} = ${bh_marketing_master_day.adgroup_id} ;;
   }
 
-  join: bh_marketing_master_day {
-    relationship: one_to_many
+  join: arch_clients {
+    relationship: many_to_one
     type: left_outer
-    sql_on: ${arch_program.adgroup_id} = ${bh_marketing_master_day.adgroup_id} ;;
+    sql_on: ${arch_clients.organization_id} = ${arch_program.organization_id} ;;
   }
 
   join: arch_outcomes {
