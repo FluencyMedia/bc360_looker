@@ -11,8 +11,8 @@ view: scl_marketing_master_day {
           *
         FROM bc360_mx_marketing.mx_marketing_master mxm
         LEFT JOIN bc360_arch_marketing.arch_program ap ON mxm.adgroup_id = ap.adgroup_id
-        LEFT JOIN bc360_src_arch_clients.arch_clients ac ON ap.organization_id = ac.organization_id
-        WHERE ac.client_id = 'CLIENT-00001';;
+        LEFT JOIN bc360_arch_clients.arch_clients ac ON ap.organization_id = ac.organization_id
+        WHERE ac.client_id = 'CLIENT-00002';;
   }
 
 }
