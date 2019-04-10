@@ -18,7 +18,7 @@ persist_with: dg_bc360_bq
 explore: scl_mx_marketing_master_day {
   from: arch_clients
   view_label: "Beaumont Health"
-  label: "BH Marketing - Master [Daily]"
+  label: "SCL Marketing - Master [Daily]"
 
   join: arch_program {
     relationship: one_to_many
