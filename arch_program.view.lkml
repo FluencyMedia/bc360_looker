@@ -62,6 +62,7 @@ view: arch_program {
     description: "Ad Group ID"
 
     hidden: no
+    primary_key: yes
 
     type: string
 

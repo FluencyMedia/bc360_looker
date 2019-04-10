@@ -20,7 +20,7 @@ explore: scl_marketing_master_day {
   label: "SCL Marketing - Master [Daily]"
 
   join: arch_program {
-    relationship: one_to_many
+    relationship: many_to_one
     type: left_outer
     sql_on: ${arch_program.adgroup_id} = ${scl_marketing_master_day.adgroup_id} ;;
   }
