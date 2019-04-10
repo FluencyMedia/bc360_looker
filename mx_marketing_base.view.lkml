@@ -346,10 +346,10 @@ dimension: rel_medium_mode {
     view_label: "5. Performance"
     label: "# Impressions"
 
-    type: sum
+    type: number
     value_format_name: decimal_0
 
-    sql: ${TABLE}.impressions;;  }
+    sql: NULLIF(SUM(${TABLE}.impressions),0);;  }
 
   measure: impr_pct {
     view_label: "5. Performance"
@@ -368,10 +368,10 @@ dimension: rel_medium_mode {
     view_label: "5. Performance"
     label: "# Clicks"
 
-    type: sum
+    type: number
     value_format_name: decimal_0
 
-    sql: NULLIF(${TABLE}.clicks,0);;
+    sql: NULLIF(SUM(${TABLE}.clicks),0);;
 
   }
 
@@ -411,19 +411,28 @@ dimension: rel_medium_mode {
     view_label: "5. Performance"
     label: "$ Cost"
 
-    type: sum
+    type: number
     value_format_name: usd_0
 
-    sql: ${TABLE}.cost;;  }
+    sql: NULLIF(SUM(${TABLE}.cost), 0)
+    label: "# Outcomes"
+
+    type: number
+    value_format_name: decimal_0
+
+    sql: NULLIF(SUM(${TABLE}.outcomes), 0);;  }
 
   measure: outcomes_sum {
     view_label: "6. Outcomes"
+    group_label: "Z - Reference"
     label: "# Outcomes"
 
-    type: sum
+    hidden: no
+
+    type: number
     value_format_name: decimal_0
 
-    sql: ${TABLE}.outcomes;;  }
+    sql: NULLIF(SUM(${TABLE}.outcomes), 0);;  }
 
   measure: outcomes_bulk_sum {
     view_label: "6. Outcomes"
@@ -432,10 +441,10 @@ dimension: rel_medium_mode {
 
     hidden: no
 
-    type: sum
+    type: number
     value_format_name: decimal_0
 
-    sql: ${TABLE}.outcomes_bulk;;  }
+    sql: NULLIF(SUM(${TABLE}.outcomes_bulk), 0);;  }
 
   ##### }
   ##### End Base Measures
@@ -533,7 +542,7 @@ dimension: rel_medium_mode {
       label: "= 'Leads'"
       description: "ISOLATED: Outcome Quality = 'Leads'"
 
-      type: sum
+      type: sum_distinct
       sql: ${TABLE}.outcomes ;;
       value_format_name: decimal_0
 
