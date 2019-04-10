@@ -20,20 +20,66 @@ explore: bc360_marketing_master_day {
   label: "BC360 - Master [Daily]"
 
   join: arch_program {
-    relationship: one_to_many
+    relationship: many_to_one
     type: left_outer
     sql_on: ${bc360_marketing_master_day.organization_id} = ${arch_program.organization_id} ;;
   }
 
   join: mx_marketing_master_day {
-    relationship: one_to_many
+    relationship: many_to_one
     type: left_outer
     sql_on: ${arch_program.adgroup_id} = ${mx_marketing_master_day.adgroup_id} ;;
   }
 
   join: arch_outcomes {
-    relationship: many_to_many
+    relationship: many_to_one
     type: left_outer
     sql_on: ${mx_marketing_master_day.outcome_tracker_id} = ${arch_outcomes.outcome_tracker_id} ;;
+  }
+}
+
+explore: bh_marketing_master_day {
+  view_label: "Beaumont Health"
+  label: "BH Marketing - Master [Daily]"
+
+  join: arch_program {
+    relationship: many_to_one
+    type: left_outer
+    sql_on: ${arch_program.adgroup_id} = ${bh_marketing_master_day.adgroup_id} ;;
+  }
+
+  join: arch_clients {
+    relationship: many_to_one
+    sql_on: ${arch_clients.organization_id} = ${arch_program.organization_id} ;;
+  }
+
+  join: arch_outcomes {
+    relationship: many_to_one
+    sql_on: ${arch_outcomes.outcome_tracker_id} = ${bh_marketing_master_day.outcome_tracker_id} ;;
+  }
+}
+
+
+
+explore: scl_marketing_master_day {
+  view_label: "SCL Health"
+  label: "SCL Marketing - Master [Daily]"
+
+  join: arch_program {
+    relationship: many_to_one
+    type: left_outer
+    sql_on: ${arch_program.adgroup_id} = ${scl_marketing_master_day.adgroup_id} ;;
+  }
+
+  join: arch_clients {
+    relationship: many_to_one
+    type: left_outer
+    sql_on: ${arch_clients.organization_id} = ${arch_program.organization_id} ;;
+  }
+
+  join: arch_outcomes {
+    relationship: many_to_one
+    type: left_outer
+    sql_on: ${scl_marketing_master_day.outcome_tracker_id} = ${arch_outcomes.outcome_tracker_id} ;;
   }
 }

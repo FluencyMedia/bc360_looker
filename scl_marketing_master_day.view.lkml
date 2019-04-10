@@ -5,7 +5,7 @@ view: scl_marketing_master_day {
   extends: [mx_marketing_base]
 
   derived_table: {
-    datagroup_trigger: dg_bc360_bq_scl
+    datagroup_trigger: dg_bc360_bq
 
     sql:  SELECT
             mxmmd.*
