@@ -107,54 +107,6 @@ explore: bc360_marketing_core_month {
   }
 }
 
-explore: bh_mx_marketing_master_day {
-  from: arch_clients
-  view_label: "Beaumont Health"
-  label: "BH - Master [Daily]"
-
-  join: arch_program {
-    relationship: one_to_many
-    type: left_outer
-    sql_on: ${bh_mx_marketing_master_day.organization_id} = ${arch_program.organization_id} ;;
-  }
-
-  join: bh_marketing_master_day {
-    relationship: one_to_many
-    type: left_outer
-    sql_on: ${arch_program.adgroup_id} = ${bh_marketing_master_day.adgroup_id} ;;
-  }
-
-  join: arch_outcomes {
-    relationship: many_to_many
-    type: left_outer
-    sql_on: ${bh_marketing_master_day.outcome_tracker_id} = ${arch_outcomes.outcome_tracker_id} ;;
-  }
-}
-
-explore: scl_mx_marketing_master_day {
-  from: arch_clients
-  view_label: "SCL Health"
-  label: "SCL - Master [Daily]"
-
-  join: arch_program {
-    relationship: one_to_many
-    type: left_outer
-    sql_on: ${scl_mx_marketing_master_day.organization_id} = ${arch_program.organization_id} ;;
-  }
-
-  join: scl_marketing_master_day {
-    relationship: one_to_many
-    type: left_outer
-    sql_on: ${arch_program.adgroup_id} = ${scl_marketing_master_day.adgroup_id} ;;
-  }
-
-  join: arch_outcomes {
-    relationship: many_to_many
-    type: left_outer
-    sql_on: ${scl_marketing_master_day.outcome_tracker_id} = ${arch_outcomes.outcome_tracker_id} ;;
-  }
-}
-
 explore: tl_touchpoint_data {
   label: "Tea Leaves Reporting"
 }
