@@ -9,13 +9,13 @@ explore: bc360_marketing_master_day {
   label: "BC360 - Master [Daily]"
 
   join: arch_program {
-    relationship: many_to_one
+    relationship: one_to_many
     type: left_outer
     sql_on: ${bc360_marketing_master_day.organization_id} = ${arch_program.organization_id} ;;
   }
 
   join: mx_marketing_master_day {
-    relationship: many_to_one
+    relationship: one_to_many
     type: left_outer
     sql_on: ${arch_program.adgroup_id} = ${mx_marketing_master_day.adgroup_id} ;;
   }
