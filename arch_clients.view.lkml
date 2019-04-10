@@ -36,6 +36,7 @@ view: arch_clients {
     label: "Organization ID [Arch_Clients]"
     description: "ID for Organization Within MP360 Client Account"
 
+    primary_key: yes
     hidden: no
 
     type: string
