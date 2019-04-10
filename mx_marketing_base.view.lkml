@@ -414,13 +414,7 @@ dimension: rel_medium_mode {
     type: number
     value_format_name: usd_0
 
-    sql: NULLIF(SUM(${TABLE}.cost), 0)
-    label: "# Outcomes"
-
-    type: number
-    value_format_name: decimal_0
-
-    sql: NULLIF(SUM(${TABLE}.outcomes), 0);;  }
+    sql: NULLIF(SUM(${TABLE}.cost), 0);; }
 
   measure: outcomes_sum {
     view_label: "6. Outcomes"
