@@ -9,7 +9,7 @@ view: mx_marketing_core_day {
 
     sql:  SELECT
             *
-          FROM bc360_mx_marketing.mx_marketing_core_day mxmcd;;
+          FROM bc360_mx_marketing.mx_marketing_core mxmcd;;
   }
 
 }

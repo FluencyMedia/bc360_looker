@@ -24,7 +24,7 @@ view: arch_program {
             campaign,
             adgroup_id,
             adgroup
-          FROM bc360_src_arch_marketing.arch_program ap;;
+          FROM bc360_arch_marketing.arch_program ap;;
   }
 
 #>>>>>>>>>  METADATA  {

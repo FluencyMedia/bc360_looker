@@ -11,7 +11,7 @@ view: arch_outcomes {
             outcome_score,
             outcome_type,
             outcome_type_name
-          FROM bc360_src_arch_marketing.arch_outcomes ao;;
+          FROM bc360_arch_marketing.arch_outcomes ao;;
   }
 
 ##########  METADATA  ##########
