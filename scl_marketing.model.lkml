@@ -16,8 +16,8 @@ datagroup: dg_bc360_bq {
 persist_with: dg_bc360_bq
 
 explore: scl_marketing_master_day {
-  view_label: "Beaumont Health"
-  label: "BH Marketing - Master [Daily]"
+  view_label: "SCL Health"
+  label: "SCL Marketing - Master [Daily]"
 
   join: arch_program {
     relationship: one_to_many
