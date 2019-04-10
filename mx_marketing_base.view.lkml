@@ -614,7 +614,7 @@ dimension: rel_medium_mode {
       ]
 
       type: number
-      sql: ${o_referrals_num} ;;
+      sql: NULLIF(${o_referrals_num}, 0) ;;
       value_format_name: decimal_0
     }
 
