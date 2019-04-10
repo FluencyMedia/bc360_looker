@@ -16,7 +16,7 @@ explore: bc360_marketing_master_day {
 
   join: mx_marketing_master_day {
     relationship: one_to_many
-    type: left_outer
+    type: inner
     sql_on: ${arch_program.adgroup_id} = ${mx_marketing_master_day.adgroup_id} ;;
   }
 
