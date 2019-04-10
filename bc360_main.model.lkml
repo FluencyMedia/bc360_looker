@@ -25,16 +25,16 @@ explore: bc360_marketing_day {
     sql_on: ${bc360_marketing_day.organization_id} = ${arch_program.organization_id} ;;
   }
 
-  join: mx_marketing_day {
+  join: mx_marketing_master_day {
     relationship: one_to_many
     type: left_outer
-    sql_on: ${arch_program.adgroup_id} = ${mx_marketing_day.adgroup_id} ;;
+    sql_on: ${arch_program.adgroup_id} = ${mx_marketing_master_day.adgroup_id} ;;
   }
 
   join: arch_outcomes {
     relationship: many_to_many
     type: left_outer
-    sql_on: ${mx_marketing_day.outcome_tracker_id} = ${arch_outcomes.outcome_tracker_id} ;;
+    sql_on: ${mx_marketing_master_day.outcome_tracker_id} = ${arch_outcomes.outcome_tracker_id} ;;
   }
 }
 
@@ -49,16 +49,16 @@ explore: bc360_marketing_core {
     sql_on: ${bc360_marketing_core.organization_id} = ${arch_program.organization_id} ;;
   }
 
-  join: mx_marketing_core {
+  join: mx_marketing_core_day {
     relationship: one_to_many
     type: left_outer
-    sql_on: ${arch_program.adgroup_id} = ${mx_marketing_core.adgroup_id} ;;
+    sql_on: ${arch_program.adgroup_id} = ${mx_marketing_core_day.adgroup_id} ;;
   }
 
   join: arch_outcomes {
     relationship: many_to_many
     type: left_outer
-    sql_on: ${mx_marketing_core.outcome_tracker_id} = ${arch_outcomes.outcome_tracker_id} ;;
+    sql_on: ${mx_marketing_core_day.outcome_tracker_id} = ${arch_outcomes.outcome_tracker_id} ;;
   }
 }
 
@@ -72,16 +72,16 @@ explore: bc360_marketing_bh_day {
     sql_on: ${bc360_marketing_bh_day.organization_id} = ${arch_program.organization_id} ;;
   }
 
-  join: mx_marketing_bh_day {
+  join: mx_bh_marketing_day {
     relationship: one_to_many
     type: left_outer
-    sql_on: ${arch_program.adgroup_id} = ${mx_marketing_bh_day.adgroup_id} ;;
+    sql_on: ${arch_program.adgroup_id} = ${mx_bh_marketing_day.adgroup_id} ;;
   }
 
   join: arch_outcomes {
     relationship: many_to_many
     type: left_outer
-    sql_on: ${mx_marketing_bh_day.outcome_tracker_id} = ${arch_outcomes.outcome_tracker_id} ;;
+    sql_on: ${mx_bh_marketing_day.outcome_tracker_id} = ${arch_outcomes.outcome_tracker_id} ;;
   }
 
 }

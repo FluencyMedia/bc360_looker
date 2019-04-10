@@ -1,11 +1,11 @@
-view: mx_marketing {
+view: mx_marketing_base {
   extension: required
 
   derived_table: {
     datagroup_trigger: dg_bc360_bq
 
     sql:  SELECT
-            FORMAT("%s-%s","MXM", GENERATE_UUID()) AS row_id,
+            row_id,
             date,
             medium,
             client_id,
