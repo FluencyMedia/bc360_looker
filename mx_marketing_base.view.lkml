@@ -45,6 +45,7 @@ dimension: row_id {
   group_label: "Database IDs"
   label: "Row ID [MX_Master]"
   description: "Unique row ID from master metrics table"
+
   primary_key: yes
 
   can_filter: no

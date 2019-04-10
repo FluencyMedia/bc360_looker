@@ -1,32 +1,32 @@
 view: arch_program {
-  sql_table_name: bc360_arch_marketing.arch_program ;;
+  # sql_table_name: bc360_arch_marketing.arch_program ;;
 
-  # derived_table: {
-  #   datagroup_trigger: dg_bc360_bq
+  derived_table: {
+   datagroup_trigger: dg_bc360_bq
 
-  #   sql:  SELECT
-  #           program,
-  #           service_line_code,
-  #           service_line,
-  #           service_offering,
-  #           service_detail,
-  #           campaign_group_id,
-  #           campaign_group,
-  #           campaign_region,
-  #           campaign_location,
-  #           campaign_tier,
-  #           campaign_matchtype,
-  #           organization_id,
-  #           agency,
-  #           account_id,
-  #           account,
-  #           medium,
-  #           campaign_id,
-  #           campaign,
-  #           adgroup_id,
-  #           adgroup
-  #         FROM bc360_arch_marketing.arch_program ap;;
-  # }
+   sql:  SELECT
+           program,
+           service_line_code,
+           service_line,
+           service_offering,
+           service_detail,
+           campaign_group_id,
+           campaign_group,
+           campaign_region,
+           campaign_location,
+           campaign_tier,
+           campaign_matchtype,
+           organization_id,
+           agency,
+           account_id,
+           account,
+           medium,
+           campaign_id,
+           campaign,
+           adgroup_id,
+           adgroup
+         FROM bc360_arch_marketing.arch_program ap;;
+  }
 
 #>>>>>>>>>  METADATA  {
 

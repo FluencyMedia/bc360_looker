@@ -1,19 +1,19 @@
 view: arch_outcomes {
-  sql_table_name: bc360_arch_marketing.arch_outcomes ;;
+  # sql_table_name: bc360_arch_marketing.arch_outcomes ;;
 
-  # derived_table: {
-  #   datagroup_trigger: dg_bc360_bq
+  derived_table: {
+   datagroup_trigger: dg_bc360_bq
 
-  #   sql:  SELECT
-  #           outcome_tracker_id,
-  #           outcome_intent,
-  #           outcome_mechanism,
-  #           outcome_quality,
-  #           outcome_score,
-  #           outcome_type,
-  #           outcome_type_name
-  #         FROM bc360_arch_marketing.arch_outcomes ao;;
-  # }
+   sql:  SELECT
+           outcome_tracker_id,
+           outcome_intent,
+           outcome_mechanism,
+           outcome_quality,
+           outcome_score,
+           outcome_type,
+           outcome_type_name
+         FROM bc360_arch_marketing.arch_outcomes ao;;
+  }
 
 ##########  METADATA  ##########
 
