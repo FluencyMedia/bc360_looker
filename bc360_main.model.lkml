@@ -37,8 +37,3 @@ explore: bc360_marketing_master_day {
     sql_on: ${mx_marketing_master_day.outcome_tracker_id} = ${arch_outcomes.outcome_tracker_id} ;;
   }
 }
-
-
-explore: tl_touchpoint_data {
-  label: "Tea Leaves Reporting"
-}

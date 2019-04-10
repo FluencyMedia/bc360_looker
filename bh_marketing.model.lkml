@@ -27,13 +27,15 @@ explore: bh_marketing_master_day {
 
   join: arch_clients {
     relationship: many_to_one
-    type: left_outer
-    sql_on: ${arch_clients.organization_id} = ${arch_program.organization_id} ;;
+    sql_on: ${arch_program.organization_id} = ${arch_clients.organization_id} ;;
   }
 
   join: arch_outcomes {
-    relationship: many_to_many
-    type: left_outer
+    relationship: many_to_one
     sql_on: ${bh_marketing_master_day.outcome_tracker_id} = ${arch_outcomes.outcome_tracker_id} ;;
   }
+}
+
+explore: tl_touchpoint_data {
+  label: "Tea Leaves Reporting"
 }
