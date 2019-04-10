@@ -4,7 +4,7 @@ connection: "bc360_bq_data"
 include: "*.view.lkml"                       # include all views in this project
 # include: "my_dashboard.dashboard.lookml"   # include a LookML dashboard called my_dashboard
 
-datagroup: dg_bc360_bq {
+datagroup: dg_bc360_bq_scl {
   sql_trigger:  SELECT
                   MAX(trg.trigger_stamp)
                 FROM (SELECT
@@ -13,7 +13,7 @@ datagroup: dg_bc360_bq {
   max_cache_age: "24 hours"
 }
 
-persist_with: dg_bc360_bq
+persist_with: dg_bc360_bq_scl
 
 explore: scl_marketing_master_day {
   view_label: "SCL Health"
