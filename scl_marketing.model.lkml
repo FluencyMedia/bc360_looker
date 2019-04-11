@@ -30,7 +30,7 @@ explore: scl_marketing_master_day_02 {
 
   join: arch_program {
     relationship: one_to_many
-    type: left_outer
+    type: inner
     sql_on: ${scl_marketing_master_day_02.organization_id} = ${arch_program.organization_id} ;;
   }
 
@@ -42,7 +42,7 @@ explore: scl_marketing_master_day_02 {
 
   join: arch_outcomes {
     relationship: many_to_one
-    type: left_outer
+    type: inner
     sql_on: ${scl_marketing_master_day.outcome_tracker_id} = ${arch_outcomes.outcome_tracker_id} ;;
   }
 }
