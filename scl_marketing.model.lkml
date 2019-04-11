@@ -30,19 +30,19 @@ explore: scl_marketing_master_day_02 {
 
   join: arch_program {
     relationship: one_to_many
-    type: inner
+    # type: left_outer
     sql_on: ${scl_marketing_master_day_02.organization_id} = ${arch_program.organization_id} ;;
   }
 
   join: scl_marketing_master_day {
     relationship: one_to_many
-    type: inner
+    # type: inner
     sql_on: ${arch_program.adgroup_id} = ${scl_marketing_master_day.adgroup_id} ;;
   }
 
   join: arch_outcomes {
     relationship: many_to_one
-    type: inner
+    # type: left_outer
     sql_on: ${scl_marketing_master_day.outcome_tracker_id} = ${arch_outcomes.outcome_tracker_id} ;;
   }
 }
