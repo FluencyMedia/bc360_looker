@@ -174,7 +174,7 @@ view: tl_touchpoint_data {
     type: sum
     value_format_name: decimal_0
 
-    sql: ${TABLE}.encounters_count ;;
+    sql: ${TABLE}.individual_unique_count ;;
   }
 
   measure: individual_unique_num {
@@ -205,40 +205,31 @@ view: tl_touchpoint_data {
     sql: ${charges_sum} - ${payments_sum} ;;
     }
 
-  measure: charges_per_encounter {
-    view_label: "Tea Leaves"
-    label: "$ Charges/Encounter"
-
-    type: number
-    value_format_name:  usd
-    sql: 1.0*(${charges_sum}) / nullif(${encounters_num},0) ;;
-  }
-
-  measure: payments_per_encounter {
-    view_label: "Tea Leaves"
-    label: "$ Payments/Encounter"
-
-    type: number
-    value_format_name: usd
-    sql: 1.0*(${payments_sum}) / nullif(${encounters_num},0) ;;
-  }
-
-  measure: unpaid_per_encounter {
-    view_label: "Tea Leaves"
-    label: "$ Unpaid/Encounter"
-
-    type: number
-    value_format_name: usd
-    sql: 1.0*(${charges_unpaid}) / nullif(${encounters_num},0) ;;
-    }
-
   measure: charges_per_individual {
     view_label: "Tea Leaves"
     label: "$ Charges/Individual"
 
     type: number
+    value_format_name:  usd
+    sql: 1.0*(${charges_sum}) / nullif(${individual_unique_num},0) ;;
+  }
+
+  measure: payments_per_individual {
+    view_label: "Tea Leaves"
+    label: "$ Payments/Individual"
+
+    type: number
     value_format_name: usd
-    sql: ${charges_sum} / ${encounters_num} ;;
+    sql: 1.0*(${payments_sum}) / nullif(${individual_unique_num},0) ;;
+  }
+
+  measure: unpaid_per_individual {
+    view_label: "Tea Leaves"
+    label: "$ Unpaid/Individual"
+
+    type: number
+    value_format_name: usd
+    sql: 1.0*(${charges_unpaid}) / nullif(${individual_unique_num},0) ;;
     }
 
 }
