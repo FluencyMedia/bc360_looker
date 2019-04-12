@@ -27,6 +27,8 @@ view: mx_downstream_tl_sum {
   dimension: row_id {
     hidden: yes
 
+    primary_key: yes
+
     type: string
     sql: ${TABLE}.row_id ;;
   }
