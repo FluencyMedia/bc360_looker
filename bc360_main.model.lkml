@@ -4,6 +4,7 @@ label: "BC360 - All Clients"
 
 persist_with: dg_bc360_bq
 
+
 explore: bc360_marketing_master_day {
   from: arch_clients
   label: "BC360 - Master [Daily]"
@@ -27,6 +28,7 @@ explore: bc360_marketing_master_day {
   }
 }
 
+
 explore: bc360_marketing_master_test {
   from: arch_clients
   label: "BC360 - Master [TEST]"
@@ -48,4 +50,9 @@ explore: bc360_marketing_master_test {
     type: left_outer
     sql_on: ${mx_marketing_master_day.outcome_tracker_id} = ${arch_outcomes.outcome_tracker_id} ;;
   }
+}
+
+
+explore: tl_touchpoint_data {
+  label: "Tea Leaves Reporting"
 }

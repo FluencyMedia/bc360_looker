@@ -23,8 +23,3 @@ explore: bh_marketing_master_day {
     sql_on: ${arch_outcomes.outcome_tracker_id} = ${bh_marketing_master_day.outcome_tracker_id} ;;
   }
 }
-
-
-explore: tl_touchpoint_data {
-  label: "Tea Leaves Reporting"
-}
