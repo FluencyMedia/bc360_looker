@@ -1,4 +1,5 @@
 view: map_services_tl {
+  label: "2. Services"
 
   derived_table: {
     datagroup_trigger: dg_bc360_tl
@@ -16,6 +17,7 @@ view: map_services_tl {
   }
 
   dimension: service_line_code {
+    hidden: yes
     type: string
     sql: ${TABLE}.service_line_code ;;
   }

@@ -1,6 +1,5 @@
 view: mx_downstream_tl_sum {
   label: "Tea Leaves - Summary"
-  # sql_table_name: bc360_mx_downstream.mx_downstream_tl_sum ;;
 
   derived_table: {
     datagroup_trigger: dg_bc360_tl
@@ -12,6 +11,8 @@ view: mx_downstream_tl_sum {
 
   dimension: campaign_service {
     label: "Campaign / Service"
+
+    hidden: yes
 
     type: string
     sql: ${TABLE}.campaign_service ;;
@@ -60,7 +61,7 @@ view: mx_downstream_tl_sum {
     type: sum
     value_format_name: decimal_0
 
-    sql: NULLIF(TABLE.charges, 0) ;;
+    sql: NULLIF(${TABLE}.charges, 0) ;;
   }
 
   measure: payments_sum {
@@ -69,7 +70,7 @@ view: mx_downstream_tl_sum {
     type: sum
     value_format_name: decimal_0
 
-    sql: NULLIF(TABLE.payments, 0) ;;
+    sql: NULLIF(${TABLE}.payments, 0) ;;
   }
 
   measure: individuals_sum {
@@ -78,16 +79,16 @@ view: mx_downstream_tl_sum {
     type: sum
     value_format_name: decimal_0
 
-    sql: NULLIF(TABLE.charges, 0) ;;
+    sql: NULLIF(${TABLE}.charges, 0) ;;
   }
 
   measure: encounters_sum {
-    label: "$ Payments"
+    label: "# Encounters"
 
     type: sum
     value_format_name: decimal_0
 
-    sql: NULLIF(TABLE.encounters, 0) ;;
+    sql: NULLIF(${TABLE}.encounters, 0) ;;
   }
 
   measure: unreimbursed_sum {
