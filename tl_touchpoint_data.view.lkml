@@ -1,5 +1,5 @@
 view: tl_touchpoint_data {
-  sql_table_name: bc_bq_data.tl_touchpoint_data ;;
+  sql_table_name: bc360_mx_downstream.tl_touchpoint_data ;;
 
   dimension: campaign_service {
     view_label: "Tea Leaves"
