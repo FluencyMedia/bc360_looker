@@ -3,7 +3,7 @@ view: tl_touchpoint_data {
 
   dimension: campaign_service {
     view_label: "Tea Leaves"
-    label: "Campaign/Service"
+    label: "Campaign/Service" #
 
     type: string
     sql: ${TABLE}.campaign_service ;;
