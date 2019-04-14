@@ -79,7 +79,7 @@ view: mx_downstream_tl_sum {
     type: sum
     value_format_name: decimal_0
 
-    sql: NULLIF(${TABLE}.charges, 0) ;;
+    sql: NULLIF(${TABLE}.individuals, 0) ;;
   }
 
   measure: encounters_sum {
@@ -115,7 +115,7 @@ view: mx_downstream_tl_sum {
     type: number
     value_format_name: usd_0
 
-    sql: ${charges_sum}s_sum} / nullif(${individuals_sum},0) ;;
+    sql: ${charges_sum} / nullif(${individuals_sum},0) ;;
   }
 
   measure: unreimbursed_per_ind {
