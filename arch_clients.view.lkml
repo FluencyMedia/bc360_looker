@@ -4,7 +4,7 @@ view: arch_clients {
   # sql_table_name: bc360_arch_clients.arch_clients ;;
 
   derived_table: {
-   datagroup_trigger: dg_bc360_bq
+   # datagroup_trigger: dg_bc360_bq
 
    sql:  SELECT
            ac.client_id,
@@ -12,7 +12,7 @@ view: arch_clients {
            ac.client,
            ac.organization,
            ac.org_short
-         FROM bc360_arch_clients.arch_clients ac;;
+         FROM flat_arch.flat_clients ac;;
   }
 
 ##########  METADATA  ##########
@@ -42,6 +42,34 @@ view: arch_clients {
     type: string
 
     sql: ${TABLE}.organization_id ;;
+  }
+
+
+  dimension: client_uid {
+    view_label: "Z - Metadata"
+    group_label: "Database IDs"
+    label: "Client ID"
+    description: "UID for Primary BC360 Client Account"
+
+    hidden: no
+
+    type: string
+
+    sql: ${TABLE}.client_uid ;;
+  }
+
+  dimension: organization_uid {
+    view_label: "Z - Metadata"
+    group_label: "Database IDs"
+    label: "Organization ID [Arch_Clients]"
+    description: "UID for Organization Within MP360 Client Account"
+
+    primary_key: no
+    hidden: no
+
+    type: string
+
+    sql: ${TABLE}.organization_uid ;;
   }
 
 
