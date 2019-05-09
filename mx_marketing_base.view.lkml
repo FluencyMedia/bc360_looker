@@ -2,26 +2,21 @@ view: mx_marketing_base {
   extension: required
 
   derived_table: {
-    datagroup_trigger: dg_bc360_bq
+    # datagroup_trigger: dg_bc360_bq
 
     sql:  SELECT
-            row_id,
-            date,
-            medium,
-            client_id,
-            adgroup_id,
-            adgroup_uid,
-            outcome_tracker_id,
-            outcome_tracker_uid,
-            creative_id,
-            criterion_id,
-            device,
-            impressions,
-            cost,
-            clicks,
-            outcomes,
-            outcomes_bulk
-          FROM bc360_mx_marketing.mx_marketing_master mxm;;
+            ROW_NUMBER() OVER () row_num,
+             CAST(date AS STRING) date,
+             CAST(medium AS STRING) medium,
+             CAST(adgroup_id AS STRING) adgroup_id,
+             CAST(outcome_tracker_id AS STRING) outcome_tracker_id,
+             CAST(device AS STRING) device,
+             CAST(impressions AS INT64) impressions,
+             CAST(cost AS FLOAT64) cost,
+             CAST(clicks AS INT64) clicks,
+             CAST(outcomes AS INT64) outcomes,
+             CAST(outcomes_bulk AS INT64) outcomes_bulk
+          FROM flat_mx.mx_marketing_master mxm;;
 
   }
 
