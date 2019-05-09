@@ -2,7 +2,7 @@ view: arch_program {
   # sql_table_name: bc360_arch_marketing.arch_program ;;
 
   derived_table: {
-   datagroup_trigger: dg_bc360_bq
+   # datagroup_trigger: dg_bc360_bq
 
    sql:  SELECT
            program,
@@ -18,14 +18,14 @@ view: arch_program {
            campaign_matchtype,
            organization_id,
            agency,
-           account_id,
+           CAST(account_id AS STRING) account_id,
            account,
            medium,
-           campaign_id,
+           CAST(campaign_id AS STRING) campaign_id,
            campaign,
-           adgroup_id,
+           CAST(adgroup_id AS STRING) adgroup_id,
            adgroup
-         FROM bc360_arch_marketing.arch_program ap;;
+         FROM flat_arch.flat_campaigns ap;;
   }
 
 #>>>>>>>>>  METADATA  {
