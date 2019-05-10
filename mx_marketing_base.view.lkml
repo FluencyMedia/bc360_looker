@@ -5,7 +5,7 @@ view: mx_marketing_base {
     # datagroup_trigger: dg_bc360_bq
 
     sql:  SELECT
-            ROW_NUMBER() OVER () row_num,
+            ROW_NUMBER() OVER () row_id,
              CAST(date AS STRING) date,
              CAST(medium AS STRING) medium,
              CAST(adgroup_id AS STRING) adgroup_id,
