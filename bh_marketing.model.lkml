@@ -6,6 +6,7 @@ persist_with: dg_bc360_bq
 
 explore: bh_marketing_master_day {
   label: "BH Marketing - Master [Daily]"
+  hidden: yes
 
   join: arch_program {
     relationship: many_to_one

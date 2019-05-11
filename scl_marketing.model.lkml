@@ -4,6 +4,7 @@ label: "BC360 - SCL Health"
 
 explore: scl_marketing_master_day {
   label: "SCL Marketing - Master [Daily]"
+  hidden: yes
 
   join: arch_program {
     relationship: one_to_many
@@ -27,6 +28,7 @@ explore: scl_marketing_master_day {
 explore: scl_marketing_master_day_02 {
   from: arch_clients
   label: "SCL Marketing - Master [TEST]"
+  hidden: yes
 
   join: arch_program {
     relationship: one_to_many

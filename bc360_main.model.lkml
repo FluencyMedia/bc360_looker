@@ -32,6 +32,7 @@ explore: bc360_marketing_master_day {
 explore: bc360_marketing_master_test {
   from: arch_clients
   label: "BC360 - Master [TEST]"
+  hidden:  yes
 
   join: arch_program {
     relationship: one_to_many
@@ -55,4 +56,5 @@ explore: bc360_marketing_master_test {
 
 explore: tl_touchpoint_data {
   label: "Tea Leaves Reporting"
+  hidden: yes
 }
