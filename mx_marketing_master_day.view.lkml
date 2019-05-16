@@ -12,6 +12,7 @@ view: mx_marketing_master_day {
           FROM flat_mx.mx_marketing_master_hour mxmmd;;
   }
 
+
   dimension: hour_of_day {
     view_label: "4. Timeframes"
     label: "Hour of Day"
@@ -21,6 +22,19 @@ view: mx_marketing_master_day {
     value_format_name: decimal_0
 
     sql: ${TABLE}.hour ;;
+  }
+
+
+
+  dimension: day_of_month {
+    view_label: "4. Timeframes"
+    label: "Day of Month"
+    description: "1 - 30/31: Numeric Day of Month"
+
+    type: number
+    value_format_name: decimal_0
+
+    sql: EXTRACT(DAY FROM ${TABLE}.date) ;;
   }
 
   dimension: time_of_day {

@@ -122,7 +122,7 @@ measure: date_start {
 
   type: date
 
-  sql: MIN(${date_date})::DATE ;;  }
+  sql: CAST(MIN(${date_date}) AS DATE) ;;  }
 
 measure: date_end {
   view_label: "4. Timeframes"
@@ -130,7 +130,7 @@ measure: date_end {
 
   type: date
 
-  sql: MAX(${date_date})::DATE ;;  }
+  sql: CAST(MAX(${date_date}) AS DATE) ;;  }
 
 measure: date_diff {
   view_label: "4. Timeframes"
@@ -139,7 +139,7 @@ measure: date_diff {
   type: number
   value_format_name: decimal_0
 
-  sql: ${date_end} - ${date_start} ;;
+  sql: DATE_DIFF(${date_end}, ${date_start}, DAY) ;;
 }
 
 measure: count_days {

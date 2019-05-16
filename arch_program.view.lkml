@@ -90,26 +90,6 @@ view: arch_program {
 
   ##########  DIMENSIONS  { ##########
 
-  set: drill_program {
-    fields: [
-      service_line,
-      campaign_group,
-      campaign
-    ]
-  }
-
-  set: drill_campaign {
-    fields: [
-      adgroup
-    ]
-  }
-
-  set: drill_medium {
-    fields: [
-      mx_metrics.mode
-    ]
-  }
-
   dimension: rel_program_main {
     view_label: "2. Services"
     group_label: "Relative Dimensions"
@@ -305,10 +285,6 @@ view: arch_program {
     label: "Service Line"
     description: "Service Line"
 
-    drill_fields: [
-      drill_program*
-    ]
-
     type: string
     sql: ${TABLE}.service_line ;;
   }
@@ -318,9 +294,9 @@ view: arch_program {
     label: "Program"
     description: "Service Line Program"
 
-    drill_fields: [
+    # drill_fields: [
       # drill_program*
-    ]
+    # ]
 
     # link: {
     #   label: "Performance - Visibility"
