@@ -70,16 +70,6 @@ dimension: outcome_tracker_id {
 ##########  DIMENSIONS  {
 
 ##### Field Sets {
-set: drill_outcomes {
-  fields: [
-    arch_programs.program,
-    arch_programs.service,
-    arch_outcomes.outcome_mechanism,
-    arch_outcomes.outcome_type
-  ]
-}
-
-
 
 # } #####
 

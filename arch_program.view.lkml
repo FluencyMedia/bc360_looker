@@ -176,8 +176,6 @@ view: arch_program {
     label: "Channel Account"
     description: "Account name within given Channel (Ads, Display, etc.)"
 
-    drill_fields: []
-
     type: string
     sql: ${TABLE}.account ;;
   }

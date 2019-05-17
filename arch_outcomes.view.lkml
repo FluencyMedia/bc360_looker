@@ -32,14 +32,6 @@ view: arch_outcomes {
 
   ##########  DIMENSIONS  ##########
 
-  set: drill_outcome {
-    fields: [
-      outcome_quality,
-      outcome_intent,
-      outcome_mechanism
-    ]
-  }
-
   dimension: outcome_intent {
     view_label: "6. Outcomes"
     label: "Outcome Intent"
