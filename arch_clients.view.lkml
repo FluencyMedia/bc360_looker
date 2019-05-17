@@ -75,21 +75,10 @@ view: arch_clients {
 
   ##########  DIMENSIONS  ##########
 
-  set: drill_client {
-    fields: [
-      organization,
-      arch_program.program
-    ]
-  }
-
   dimension: client {
     view_label: "1. Client/Account"
     label: "Client Account"
     description: "Primary BC360 Client Account"
-
-    drill_fields: [
-      drill_client*
-    ]
 
     type: string
     sql: ${TABLE}.client ;;
@@ -114,11 +103,6 @@ view: arch_clients {
     view_label: "1. Client/Account"
     label: "Client Organization"
     description: "Internal Organization Within BC360 Client Account"
-
-    drill_fields: [
-      drill_client*,
-      -client
-    ]
 
     type: string
     sql: ${TABLE}.organization ;;

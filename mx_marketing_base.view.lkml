@@ -79,15 +79,6 @@ set: drill_outcomes {
   ]
 }
 
-set: drill_mx_outcomes {
-  fields: [
-    leads_total,
-    cost_sum,
-    cpl,
-    ltr
-  ]
-}
-
 
 
 # } #####
@@ -559,11 +550,6 @@ dimension: rel_medium_mode {
       label: ">= Leads"
       description: "'# Leads' + '# Referrals"
 
-      drill_fields: [
-        drill_outcomes*,
-        drill_mx_outcomes*
-      ]
-
       type: number
       sql: ${o_leads_num} + ${o_referrals_num} ;;
       value_format_name: decimal_0
@@ -573,10 +559,6 @@ dimension: rel_medium_mode {
       view_label: "6. Outcomes"
       label: "$ CPL"
       description: "$ Cost / # Leads"
-
-      drill_fields: [
-        drill_outcomes*
-      ]
 
       type: number
       value_format_name: usd
@@ -598,11 +580,6 @@ dimension: rel_medium_mode {
       label: "# Referrals"
       description: "= '# Referrals'"
 
-      drill_fields: [
-        drill_outcomes*,
-        drill_mx_outcomes*
-      ]
-
       type: number
       sql: NULLIF(${o_referrals_num}, 0) ;;
       value_format_name: decimal_0
@@ -612,10 +589,6 @@ dimension: rel_medium_mode {
       view_label: "6. Outcomes"
       label: "$ CPR"
       description: "$ Cost / # Referrals"
-
-      drill_fields: [
-        drill_outcomes*
-      ]
 
       type: number
       value_format_name: usd
