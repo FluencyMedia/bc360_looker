@@ -33,3 +33,16 @@ explore: tl_touchpoint_data {
   label: "Tea Leaves Reporting"
   hidden: yes
 }
+
+explore: map_services {
+  group_label: "BC360 - Admin"
+  label: "BC360 - Program/Service Check"
+
+  join: arch_program {
+    relationship: one_to_many
+    type: left_outer
+    sql_on: ${map_services.service_line_code} = ${arch_program.service_line_code} ;;
+  }
+
+
+}
