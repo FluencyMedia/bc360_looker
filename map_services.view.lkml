@@ -9,6 +9,7 @@ view: map_services {
   }
 
   dimension: service_line {
+
     type: string
     sql: ${TABLE}.service_line ;;
   }

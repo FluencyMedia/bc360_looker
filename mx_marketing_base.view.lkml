@@ -585,6 +585,17 @@ dimension: rel_medium_mode {
 
       sql: 1.0*(${cost_sum}) / nullif(${referrals_total},0) ;;  }
 
+    measure: referrals_per_thousand {
+
+      view_label: "6. Outcomes"
+      label: "$ Purchase Power"
+      description: "# Referrals / $ Cost (x1K): 'Bigger is Better' counterpart to 'Cost per Referral'"
+
+      type: number
+      value_format_name: decimal_1
+
+      sql: 1000.0*(${referrals_total}) / nullif(${cost_sum},0) ;;}
+
     measure: rtr {
       view_label: "6. Outcomes"
       label: "% Referrals"
