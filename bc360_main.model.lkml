@@ -1,13 +1,13 @@
 include: "bc360_admin.model.lkml"
 
-label: "BC360 - All Clients"
+label: "BC360 - LEGACY"
 
 persist_with: dg_bc360_bq
 
 
 explore: bc360_marketing_master_day {
   from: arch_clients
-  label: "BC360 - Master [Daily]"
+  label: "BC360 - Master [LEGACY]"
 
   join: arch_program {
     relationship: one_to_many
@@ -37,6 +37,7 @@ explore: tl_touchpoint_data {
 explore: map_services {
   group_label: "BC360 - Admin"
   label: "BC360 - Program/Service Check"
+  hidden: yes
 
   join: arch_program {
     relationship: one_to_many

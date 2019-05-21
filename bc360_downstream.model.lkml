@@ -6,6 +6,7 @@ persist_with: dg_bc360_tl
 
 explore: mx_downstream_tl_sum {
   label: "CRM - Touchpoints"
+  hidden: yes
 
   join: map_services_tl {
     relationship: many_to_one
