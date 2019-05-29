@@ -8,6 +8,7 @@ persist_with: dg_bc360_bq
 explore: bc360_marketing_master_day {
   from: arch_clients
   label: "BC360 - Master [LEGACY]"
+  hidden: yes
 
   join: arch_program {
     relationship: one_to_many
